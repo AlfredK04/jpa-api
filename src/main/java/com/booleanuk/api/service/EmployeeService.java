@@ -34,6 +34,7 @@ public class EmployeeService {
                     employee.setLastName(replacement.getLastName());
                     employee.setLocation(replacement.getLocation());
                     employee.setEmail(replacement.getEmail());
+                    employee.setDepartment(replacement.getDepartment());
                     return this.employeeRepository.save(employee);
                 });
     }
