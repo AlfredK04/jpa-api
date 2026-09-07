@@ -1,6 +1,6 @@
 package com.booleanuk.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +33,7 @@ public class Publisher {
     private String location;
 
     @OneToMany(mappedBy = "publisher")
-    @JsonIgnore
+    @JsonIgnoreProperties(value = "publisher", allowSetters = true)
     @ToString.Exclude
     private List<Book> books = new ArrayList<>();
 }

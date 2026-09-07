@@ -1,6 +1,6 @@
 package com.booleanuk.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class Author {
     private boolean alive;
 
     @OneToMany (mappedBy = "author")
-    @JsonIgnore
+    @JsonIgnoreProperties(value = "author", allowSetters = true)
     @ToString.Exclude
     private List<Book> books = new ArrayList<>();
 }
